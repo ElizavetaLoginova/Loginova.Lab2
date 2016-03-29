@@ -124,15 +124,15 @@ void MatrixB(double **b, int n, double eps)
 
 double Sinus(double x, double eps)
 {
-	double sum = 0;
-	int k = 1;
 	double n = x;
+	double sum = 0.0;
+	int i = 1;
 
 	while (fabs(n) > eps)
 	{
 		sum += n;
-		k += 2;
-		n *= (-1.0 * x * x) / ((2 * k) * (2 * k + 1));
+		n *= -1.0 * x * x / ((2 * i) * (2 * i + 1));
+		i++;
 	}
 	return sum;
 }
