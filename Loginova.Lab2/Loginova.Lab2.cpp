@@ -86,8 +86,12 @@ double** AllocMemory(int n)
 
 double TheElementOfMatrixA(double eps, int i, int j)
 {
+	double pi = 3.14159265359;
+	int k = i * j;
+	while (k > pi) k -= 2 * pi;
+	while (k < -pi) k += 2 * pi;
 	double a = 0;
-	a = (Sinus(i*j, eps) + i + 1) / ((1 + j)*(1 + j)*(1 + j));
+	a = (Sinus(k, eps) + i + 1) / ((1 + j)*(1 + j)*(1 + j));
 	return a;
 }
 
